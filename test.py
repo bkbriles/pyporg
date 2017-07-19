@@ -5,7 +5,7 @@ import time
 
 # Dummy vars for now
 # TODO: Make file_path user defined!
-file_path   = '/home/brian/test/'
+file_path   = '/home/brian/test/PYPORG_TEST/'
 folder_name = 'MKDIR_TEST'
 
 file_path = os.chdir(file_path)
@@ -19,7 +19,7 @@ for f in os.listdir():
     except IOError:
         print('Error: Name or info of file doesn\'t exist')
     else:
-        print("file modified: ", time.asctime(time.localtime(mod_date.st_mtime)))
+        print("file modified: ", time.asctime(time.localtime(mod_date.st_mtime)) + ' ' + f)
         
 
     ''' try:
