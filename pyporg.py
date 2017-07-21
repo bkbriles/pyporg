@@ -4,7 +4,7 @@ import os
 import time
 
 # Dummy vars for now
-file_path   = '/home/brian/test/PYPORG_TEST/'
+file_path = '/home/brian/test/PYPORG_TEST/'
 
 file_path = os.chdir(file_path)
 
@@ -23,8 +23,12 @@ for f in os.listdir():
     # Set a new folder name for f
     new_folder = f_year + " " + f_month
 
-    if os.path.isdir(new_folder):
-        os.rename(f, new_folder + "/" + f)
-    else:
-        os.makedirs(new_folder)
-        os.rename(f, new_folder + "/" + f)     
+    if file_ext == ".jpg" or file_ext == ".png":
+        if os.path.isdir(new_folder):
+            print("Moving '" + f + "' to '" + new_folder + "'")
+            os.rename(f, new_folder + "/" + f)
+        else:
+            print("Creating directory: \'" + new_folder +"'")
+            os.makedirs(new_folder)
+            print("Moving '" + f + "' to '" + new_folder + "'")
+            os.rename(f, new_folder + "/" + f)
