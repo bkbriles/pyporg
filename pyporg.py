@@ -4,7 +4,11 @@ import os
 import time
 
 # Dummy vars for now
-file_path = '/home/brian/test/PYPORG_TEST/'
+file_path       = '/home/brian/test/PYPORG_TEST/'
+no_duplicates   = False
+chk_jpg         = True
+chk_jpeg        = False
+chk_png         = True
 
 file_path = os.chdir(file_path)
 
@@ -23,12 +27,23 @@ for f in os.listdir():
     # Set a new folder name for f
     new_folder = f_year + " " + f_month
 
-    if file_ext == ".jpg" or file_ext == ".png":
-        if os.path.isdir(new_folder):
-            print("Moving '" + f + "' to '" + new_folder + "'")
-            os.rename(f, new_folder + "/" + f)
-        else:
-            print("Creating directory: \'" + new_folder +"'")
-            os.makedirs(new_folder)
-            print("Moving '" + f + "' to '" + new_folder + "'")
-            os.rename(f, new_folder + "/" + f)
+    if chk_jpg == True:
+        fileTransfer(no_duplicates)
+    if chk_jpeg == True:
+        fileTransfer(no_duplicates)
+    if chk_png == True:
+        fileTransfer(no_duplicates)
+
+
+def fileTransfer(no_duplicates):
+    if os.path.isdir(new_folder):
+        print("Moving '" + f + "' to '" + new_folder + "'")
+        os.rename(f, new_folder + "/" + f)
+    else:
+        print("Creating directory: \'" + new_folder +"'")
+        os.makedirs(new_folder)
+        print("Moving '" + f + "' to '" + new_folder + "'")
+        os.rename(f, new_folder + "/" + f)
+
+    #if no_duplicates == True:
+        # Check for duplicate files and remove
