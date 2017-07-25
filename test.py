@@ -1,5 +1,29 @@
 #!/usr/bin/python3
 
+# from tkinter import *
+
+# # Create window obj
+# window = Tk()
+# frame = Frame(window, width = 300, height = 250)
+
+# chk_no_duplicate = Checkbutton(window, text = "Delete duplicates")
+# chk_type_jpg = Checkbutton(window, text = ".jpg")
+# chk_type_jpeg = Checkbutton(window, text = ".jpeg")
+# chk_type_png = Checkbutton(window, text = ".png")
+# chk_type_img = Checkbutton(window, text = ".img") 
+# btn_start = Button(text = "Start", fg = "BLACK")
+# btn_close = Button(text = "Close", fg = "BLACK")
+
+# chk_type_jpeg.grid(row = 0, column = 0)
+# chk_type_jpg.grid(row = 0, column = 1)
+# chk_type_png.grid(row = 1, column = 0)
+# chk_type_img.grid(row = 1, column = 1)
+# chk_no_duplicate.grid(columnspan = 2)
+# btn_start.grid(row = 5, column = 0)
+# btn_close.grid(row = 5, column = 1)
+
+# window.mainloop()
+
 # import the library
 from appJar import gui
 
@@ -17,11 +41,6 @@ def press(button):
 # create a GUI variable called app
 app = gui("PyPORG", "300x300")
 app.setBg("lightgray")
-
-# add & configure widgets - widgets get a name, to help referencing them later
-app.addLabel("title", "Python Picture Organizer")
-app.setLabelBg("title", "lightgray")
-app.setLabelFg("title", "black")
 
 # Separator
 app.addHorizontalSeparator(1,0,4, colour="lightblue")
